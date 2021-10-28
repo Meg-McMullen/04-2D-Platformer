@@ -70,6 +70,12 @@ func is_on_left_wall():
 		return true
 	return false
 
+func do_damage(d):
+	print(Global.health)
+	Global.decrease_health(d)
+	if Global.health <= 0:
+		die()
+
 func get_right_collider():
 	return $Wall/Right.get_collider()
 
@@ -81,4 +87,5 @@ func set_wall_raycasts(is_enabled):
 	$Wall/Right.enabled = is_enabled
 
 func die():
+	Global.decrease_lives(1)
 	queue_free()
