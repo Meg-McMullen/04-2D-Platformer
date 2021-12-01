@@ -5,7 +5,6 @@ onready var ray = $RayCast2D
 export var speed = 250
 export var looking_speed = 100
 export var damage = 100
-var velocity = Vector2.ZERO
 	
 func _physics_process(_delta):
 	player = get_node_or_null("/root/Game/Player_Container/Player")
